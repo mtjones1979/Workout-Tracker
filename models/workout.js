@@ -36,6 +36,12 @@ const workoutSchema = new Schema({
       },
     },
   ],
+}, { toJSON: { virtuals: true }} );
+// had to google how to get total duration from mongoose virtuals
+workoutSchema.virtual('totalDuration').get(function(){
+  return this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
+  }, 0);
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
