@@ -14,8 +14,8 @@ router.get("/api/workouts", (req, res) => {
     // ])
     db.Workout.find({})
 
-        .then((dbWorkouts) => {
-            res.json(dbWorkouts);
+        .then((dbWorkout) => {
+            res.json(dbWorkout);
         })
         .catch((err) => {
             res.json(err);
@@ -49,13 +49,26 @@ router.get("/api/workouts/range", (req, res) => {
 //     res.json(err);
 // });
 
-router.post("/api/workouts", ({ body }, res) => {
-    db.Workout.create(body)
-        .then(dbWorkout => {
+router.post("/api/workouts", (req, res) => {
+    db.Workout.create({})
+        .then((dbWorkout) => {
             res.json(dbWorkout);
         })
-        .catch(err => {
+        .catch((err) => {
             res.json("error occured creating a workout: ", err);
         });
+});
+// wouldn't let me continue with post until put was filled in
+router.put("/api/workouts/:id", (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+
+    db.Workout.findOneAndUpdate({ _id: id }, { $push: {exercises: body} })
+    .then ((dbWorkout) => {
+        res.json(dbWorkout);
+    })
+    .catch ((err) => {
+        res.json(err);
+    })
 });
 module.exports = router;
