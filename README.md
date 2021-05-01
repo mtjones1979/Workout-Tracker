@@ -17,11 +17,14 @@
 
   ## Usage
   
-  * Application Video:
-  [Video Link]()
+  * Heroku Link:
+  [Heroku Link](https://damp-meadow-44377.herokuapp.com/)
   
   * Screenshots:
-  ![alt text]()
+  ![alt text](https://user-images.githubusercontent.com/74076318/116795238-2573db00-aa99-11eb-8a63-e408b259da23.png)
+  ![alt text](https://user-images.githubusercontent.com/74076318/116795212-e04fa900-aa98-11eb-8b9e-c3e1926b8d19.png)
+  ![alt text](https://user-images.githubusercontent.com/74076318/116795266-5fdd7800-aa99-11eb-9cfc-c37f98b6814c.png)
+  ![alt text](https://user-images.githubusercontent.com/74076318/116795303-9ca96f00-aa99-11eb-9497-3415e31e7727.png)
 
   ## Installation
   I used Express, MongoDB database to store the data, used Mongoose to set up the schema and the provided HTML pages and javascript to have it function.

@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000
 // const uri = process.env.MONGODB_URI;
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useCreateIndex: true,
   useFindAndModify: false,
 });
-
+console.log(mongoose.connect)
 // routes
 app.use(require("./routes/apiRoutes.js"));
 app.use(require("./routes/viewRoutes.js"));
