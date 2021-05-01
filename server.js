@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // const morgan = require("morgan");
 
 const PORT = process.env.PORT || 3000
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
